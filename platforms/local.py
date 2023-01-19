@@ -21,3 +21,7 @@ class Platform(base.Platform):
     @property
     def imagenet_root(self):
         raise NotImplementedError
+
+    @property
+    def tinyimagenet_root(self):
+        return os.path.join(pathlib.Path.home(), '/mnt/d/PhDCode/dnnsTinyImageNet/data/tinyimagenet')
