@@ -118,7 +118,7 @@ class Model(base.Model):
 
         dataset_hparams = hparams.DatasetHparams(
             dataset_name='tinyimagenet',
-            batch_size=64,
+            batch_size=1024,
         )
 
         training_hparams = hparams.TrainingHparams(
