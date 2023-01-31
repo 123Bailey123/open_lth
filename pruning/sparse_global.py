@@ -52,7 +52,13 @@ class Strategy(base.Strategy):
 
         # Create a vector of all the unpruned weights in the model.
         weight_vector = np.concatenate([v[current_mask[k] == 1] for k, v in weights.items()])
-        threshold = np.sort(np.abs(weight_vector))[number_of_weights_to_prune]
+
+        #sparse global
+        #threshold = np.sort(np.abs(weight_vector))[number_of_weights_to_prune]
+
+        #sparse random global
+        threshold = np.sort(np.random.shuffle(weight_vector))[number_of_weights_to_prune]
+
 
         new_mask = Mask({k: np.where(np.abs(v) > threshold, current_mask[k], np.zeros_like(v))
                          for k, v in weights.items()})
