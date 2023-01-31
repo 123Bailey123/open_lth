@@ -79,7 +79,7 @@ class LotteryDesc(Desc):
         hparams.DatasetHparams.add_args(parser, defaults=defaults.dataset_hparams if defaults else None)
         hparams.ModelHparams.add_args(parser, defaults=defaults.model_hparams if defaults else None)
         hparams.TrainingHparams.add_args(parser, defaults=defaults.training_hparams if defaults else None)
-        pruning_hparams.add_args(parser, defaults=def_ph if defaults else None)
+        pruning_hparams.add_args(parser, defaults=defaults.pruning_hparams if defaults else None)
 
         # Handle pretraining.
         if pretrain:
