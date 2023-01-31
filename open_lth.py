@@ -46,6 +46,7 @@ def main():
         sys.exit(1)
 
     # Add arguments for the various runners.
+    print(parser)
     runner_registry.get(runner_name).add_args(parser)
 
     args = parser.parse_args()
